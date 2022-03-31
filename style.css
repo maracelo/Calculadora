@@ -1,0 +1,69 @@
+body{
+    background-color: #8daa6b; 
+    font-family: sans-serif;
+}
+
+h1{
+    color: #29311f;
+    position: absolute;
+    margin: auto;
+    left: 50%;
+    top: 20vh;
+    transform: translate(-50%,0);
+    white-space: nowrap;
+}
+
+main{
+    width: 120px;
+    height: 170px;
+    background: #1f1f1f;
+    color: #3ec93e;
+    padding: 15px;
+    border-radius: 10px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    border-bottom: solid 20px black;
+    box-shadow: #00000079 20px 20px 20px;
+    align-items: flex-start;
+    display: grid;
+    grid-template-columns: repeat(4,26px);
+    justify-content: space-around;
+}
+
+.display{
+    background-color: #575757;
+    height: 20px;
+    border: solid rgb(137, 137, 250) 1px;
+    padding: 2px;
+    text-align: right;
+    grid-column: span 4;
+    cursor: default;
+}
+
+button{
+    background-color: black;
+    height: 26px;
+    width: 26px;
+    border: 1px solid #8989fa;
+    color: white;
+    font-size: 1em;
+    padding: 2px;
+    position: relative;
+    grid-column: span 1;
+    cursor: pointer;
+}
+
+.operador.divisao{
+    font-size: .5em;
+    height: auto;
+}
+
+.limpar{
+    background-color: rgb(124, 63, 63);
+    border-color: rgb(87, 4, 4);
+    font-size: .5em;
+    height: auto;
+    grid-column: span 3;
+}
