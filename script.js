@@ -66,8 +66,8 @@ class Calculadora{
 
     calculo(){
         let resultado
-        const anterior = Number(this.Anterior)
-        const atual = Number(this.Atual)
+        const anterior = parseFloat(this.Anterior)
+        const atual = parseFloat(this.Atual)
         if(this.Anterior === '' || this.Atual === '') return
         switch(this.operador){
             case '+': resultado = anterior + atual
