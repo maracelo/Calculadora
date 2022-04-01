@@ -74,7 +74,7 @@ class Calculadora{
             break
             case '-': resultado = anterior - atual
             break
-            case '*': resultado = anterior * atual
+            case 'x': resultado = anterior * atual
             break
             case '/': resultado = anterior / atual
             break
