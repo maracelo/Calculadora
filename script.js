@@ -38,7 +38,7 @@ class Calculadora{
     adicionarNumero(numero){
         if(this.Atual.length === 12) return
         if(numero === ',' && this.Atual.includes(',')) return
-        if(numero === ',' && this.Atual === '' && this.Atual === '_') return this.Atual = this.Atual = '0,'
+        if(numero === ',' && this.Atual === '' || numero === ',' && this.Atual === '_') return this.Atual = this.Atual = '0,'
         if(this.Atual === '_'){
             this.Atual = numero.toString()
         }else{
