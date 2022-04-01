@@ -37,7 +37,7 @@ class Calculadora{
 
     adicionarNumero(numero){
         if(numero === ',' && this.Atual.includes(',')) return
-        if(numero === ',' && this.Atual === '') return this.Atual = this.Atual.toString() + '0,'
+        if(numero === ',' && this.Atual === '' && this.Atual === '_') return this.Atual = this.Atual = '0,'
         if(this.Atual === '_'){
             this.Atual = numero.toString()
         }else{
@@ -66,6 +66,8 @@ class Calculadora{
 
     calculo(){
         let resultado
+        this.Anterior = this.Anterior.replace(',','.')
+        this.Atual = this.Atual.replace(',','.')
         const anterior = parseFloat(this.Anterior)
         const atual = parseFloat(this.Atual)
         if(this.Anterior === '' || this.Atual === '') return
@@ -80,6 +82,7 @@ class Calculadora{
             break
             default: return
         }
+        resultado = resultado.replace(".",",")
         this.Atual = resultado
         this.Anterior = ''
         this.operador = undefined
