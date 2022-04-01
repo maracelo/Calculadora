@@ -36,6 +36,7 @@ class Calculadora{
     }
 
     adicionarNumero(numero){
+        if(this.Atual.length === 12) return
         if(numero === ',' && this.Atual.includes(',')) return
         if(numero === ',' && this.Atual === '' && this.Atual === '_') return this.Atual = this.Atual = '0,'
         if(this.Atual === '_'){
@@ -66,8 +67,8 @@ class Calculadora{
 
     calculo(){
         let resultado
-        this.Anterior = this.Anterior.replace(',','.')
-        this.Atual = this.Atual.replace(',','.')
+        if(this.Anterior.includes(',')){this.Anterior = this.Anterior.replace(',','.')}
+        if(this.Atual.includes(',')){this.Atual = this.Atual.replace(',','.')}
         const anterior = parseFloat(this.Anterior)
         const atual = parseFloat(this.Atual)
         if(this.Anterior === '' || this.Atual === '') return
@@ -82,10 +83,11 @@ class Calculadora{
             break
             default: return
         }
-        resultado = resultado.replace(".",",")
-        this.Atual = resultado
+        resultado = resultado.toString()
+        this.Atual = resultado.replace('.',',')
         this.Anterior = ''
         this.operador = undefined
+        if(resultado.length > 12){this.Atual = 'Erro'}
     }
 
     atualizarDisplay(){
